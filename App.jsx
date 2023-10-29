@@ -34,6 +34,7 @@ import PrivacyPolicy from './src/Screens/PrivacyPolicy';
 import Terms from './src/Screens/Terms';
 import HelpandSupport from './src/Screens/HelpSupport';
 import TestingScreen from './src/Screens/Testing';
+import ChatScreen from './src/Screens/Chat';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -116,6 +117,20 @@ const MainTabs = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Info',
+          tabBarIcon: tabInfo => (
+            <Icon
+              name={tabInfo.focused ? 'book' : 'book-outline'}
+              size={25}
+              color="#282828"
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{
+          tabBarLabel: 'Chat',
           tabBarIcon: tabInfo => (
             <Icon
               name={tabInfo.focused ? 'book' : 'book-outline'}
